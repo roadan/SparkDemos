@@ -11,7 +11,7 @@ class JoiningData {
 
   def main(args: Array[String]) {
 
-    val conf = new SparkConf().setAppName("Spark Pi")
+    val conf = new SparkConf().setAppName("Spark Joining Data")
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
@@ -55,6 +55,5 @@ class JoiningData {
     val castWithTvAndMovies = actorsAndMovies.cogroup(actorsAndShows)
     castWithTvAndMovies.foreach(println)
 
-    
   }
 }
