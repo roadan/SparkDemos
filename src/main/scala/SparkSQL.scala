@@ -3,10 +3,14 @@ import org.apache.spark.SparkConf
 import org.apache.spark.sql._
 
 import scala.collection.mutable.ArrayBuffer
+import scala.reflect.runtime.universe.TypeTag
 
+// creating a case class
+case class Actor(id: String, name: String, moviesCount: Int)
 
 /**
- * Created by roadan on 12/25/14.
+ * This demo shows the creation of SchemaRDDs from RDD[String] and JSON files
+ * simple SQL execution and Scala UDFs
  */
 class SparkSQL {
 
@@ -17,9 +21,6 @@ class SparkSQL {
     val sqlContext = new SQLContext(sc)
 
     import sqlContext.createSchemaRDD
-
-    // creating a case class
-    case class Actor(id: String, name: String, moviesCount: Int)
 
     val actorsFile = sc.textFile("file:/Users/roadan/Work/Sessions/Spark/Demos/Data/actors")
     val actors = actorsFile.map(_.split(",")).map(a => Actor(id = a(0).drop(1), name = a(1), moviesCount = a(2).dropRight(1).toInt))
