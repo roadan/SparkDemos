@@ -15,6 +15,8 @@ class Aggregations {
     val sc = new SparkContext(conf)
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
+    import sqlContext.createSchemaRDD
+
     // creating the initial dataset
     // loading the movies from a JSON file
     val movies = sqlContext.jsonFile("file:/Users/roadan/Work/Sessions/Spark/Demos/Data/marvel_movies.json")
