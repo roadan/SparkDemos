@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 * this demo shows a simple join between two RDDs as well as union
 * cogroup and intersection
 */
-class JoiningData {
+object JoiningData {
 
   def main(args: Array[String]) {
 

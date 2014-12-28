@@ -1,7 +1,7 @@
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.SparkContext._
 
-class WordCount {
+object WordCount {
 
   def main(args: Array[String]) {
 

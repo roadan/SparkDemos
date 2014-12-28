@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 /**
  * this demo shows a simple aggregations over RDDs
  */
-class Aggregations {
+object Aggregations {
 
   def main(args: Array[String]): Unit = {
 

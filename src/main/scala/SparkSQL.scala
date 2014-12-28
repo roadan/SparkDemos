@@ -12,7 +12,7 @@ case class Actor(id: String, name: String, moviesCount: Int)
  * This demo shows the creation of SchemaRDDs from RDD[String] and JSON files
  * simple SQL execution and Scala UDFs
  */
-class SparkSQL {
+object SparkSQL {
 
   def main (args: Array[String]) {
 
