@@ -31,7 +31,7 @@ object TwitterStream {
 
     val tweetStream = TwitterUtils.createStream(ssc, None, args, StorageLevel.MEMORY_ONLY_SER_2 )
 
-    val sparkTweets = tweetStream.map(twt => (twt.getUser.getId, twt.getText.toLowerCase) //&&
+    val sparkTweets = tweetStream.map(twt => (twt.getUser.getName, twt.getText.toLowerCase) //&&
                                                  // twt.getText.toLowerCase.contains("#apachespark") &&
                                                  //twt.getText.toLowerCase.contains("@yrodenski")
     )
